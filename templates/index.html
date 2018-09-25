@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Mission to Mars</h1>
+            <p  class="text-center"><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+
+        </div>
+        <div class="row content">
+            <div class="col-sm-12 text-left ">
+                <h3><b>Latest Mars News</b></h4>
+                <h4><b>{{mars_db.latest_news_title}}</b></h4>
+                <p>{{mars_db.latest_news_paragraph}}</p>
+            </div>
+        </div>
+        <div class="row content">
+            <div class="col-sm-8 text-left ">
+                <h3><b>Featured Mars Image</b></h4>
+                <img src={{mars_db.featured_image_url}} class="feature-image img-fluid mx-auto" style="width:100%" />
+            </div>
+            <div class = "col-sm-4 text-left">
+                <div class="row context">
+                    <h3><b>Current Weather on Mars</b></h4>
+                    <p>{{mars_db.mars_weather}}</p>
+                </div>
+                <div class="row context">
+                    <h3><b>Mars Facts</b></h4>
+                    <p>{{mars_db.mars_facts_html_table|safe}}</p>
+                </div>
+            </div>
+        </div>
+   
+        <div class="row content">
+            <div class="col-sm-12 text-center ">
+                <h3><b>Mars Hemispheres</b></h3>
+            </div>
+            <div class = "col-sm-6 text-center">
+                <div class="row content">
+                    <p> <img src={{mars_db.hemi_info[0].img_url}} style="width:80%"/></p>
+                    <h4>{{mars_db.hemi_info[0].title}}</h4>
+                </div>
+                <div class="row content">
+                    <p> <img src={{mars_db.hemi_info[1].img_url}} width="80%"></p>
+                    <h4>{{mars_db.hemi_info[1].title}}</h4>
+                </div> 
+            </div>
+        <br/>
+        <br/>
+            <div class = "col-sm-6 text-center">
+                <div class="row content">
+                    <p> <img src={{mars_db.hemi_info[2].img_url}} style="width:80%"/></p>
+                    <h4>{{mars_db.hemi_info[2].title}}</h4>
+                </div>
+                <div class="row content">
+                    <p> <img src={{mars_db.hemi_info[3].img_url}} width="80%"></p>
+                    <h4>{{mars_db.hemi_info[3].title}}</h4>
+                </div> 
+            </div>
+        </div> 
+
+    </div>
+
+</body>
+
+</html>
